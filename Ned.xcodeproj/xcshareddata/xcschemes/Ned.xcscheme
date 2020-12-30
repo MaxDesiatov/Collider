@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D13CBCC2259A6F3800808FD2"
                BuildableName = "Ned.app"
-               BlueprintName = "Ned (macOS)"
+               BlueprintName = "Ned"
                ReferencedContainer = "container:Ned.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,7 +46,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D13CBCC2259A6F3800808FD2"
             BuildableName = "Ned.app"
-            BlueprintName = "Ned (macOS)"
+            BlueprintName = "Ned"
             ReferencedContainer = "container:Ned.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -63,7 +63,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D13CBCC2259A6F3800808FD2"
             BuildableName = "Ned.app"
-            BlueprintName = "Ned (macOS)"
+            BlueprintName = "Ned"
             ReferencedContainer = "container:Ned.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

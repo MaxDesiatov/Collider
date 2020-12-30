@@ -8,9 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		D13CBCC8259A6F3800808FD2 /* NedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13CBCB4259A6F3600808FD2 /* NedApp.swift */; };
-		D13CBCCA259A6F3800808FD2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13CBCB5259A6F3600808FD2 /* ContentView.swift */; };
+		D13CBCCA259A6F3800808FD2 /* WorkspaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13CBCB5259A6F3600808FD2 /* WorkspaceView.swift */; };
 		D13CBCCC259A6F3800808FD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13CBCB6259A6F3800808FD2 /* Assets.xcassets */; };
-		D13FD61A259B713900C328A8 /* SwiftTreeSitter in Frameworks */ = {isa = PBXBuildFile; productRef = D13FD619259B713900C328A8 /* SwiftTreeSitter */; };
+		D18013EE259D2B2F004FF3A6 /* SceneWithViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18013ED259D2B2F004FF3A6 /* SceneWithViewStore.swift */; };
+		D18013F3259D377B004FF3A6 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18013F2259D377B004FF3A6 /* WelcomeView.swift */; };
+		D1D5A3A6259D135200888466 /* RootState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5A3A5259D135200888466 /* RootState.swift */; };
+		D1D5A3AF259D14E900888466 /* WorkspaceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5A3AE259D14E900888466 /* WorkspaceState.swift */; };
+		D1D5A3B2259D189600888466 /* RootEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5A3B1259D189600888466 /* RootEnvironment.swift */; };
+		D1D5A3B9259D190900888466 /* SystemEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5A3B8259D190900888466 /* SystemEnvironment.swift */; };
 		D1F0643E259CBB0B00B4367F /* SwiftLSPClient in Frameworks */ = {isa = PBXBuildFile; productRef = D1F0643D259CBB0B00B4367F /* SwiftLSPClient */; };
 		D1F06447259CBD4C00B4367F /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = D1F06446259CBD4C00B4367F /* Sourceful */; };
 		D1F0644C259CBDFF00B4367F /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = D1F0644B259CBDFF00B4367F /* ComposableArchitecture */; };
@@ -19,11 +24,17 @@
 /* Begin PBXFileReference section */
 		D11E358D259D029000E7F4EA /* SwiftLSPClient.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftLSPClient.xcframework; path = ../SwiftLSPClient/SwiftLSPClient.xcframework; sourceTree = "<group>"; };
 		D13CBCB4259A6F3600808FD2 /* NedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NedApp.swift; sourceTree = "<group>"; };
-		D13CBCB5259A6F3600808FD2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D13CBCB5259A6F3600808FD2 /* WorkspaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceView.swift; sourceTree = "<group>"; };
 		D13CBCB6259A6F3800808FD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D13CBCC3259A6F3800808FD2 /* Ned.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ned.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D13CBCC5259A6F3800808FD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D13CBCC6259A6F3800808FD2 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		D18013ED259D2B2F004FF3A6 /* SceneWithViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneWithViewStore.swift; sourceTree = "<group>"; };
+		D18013F2259D377B004FF3A6 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		D1D5A3A5259D135200888466 /* RootState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootState.swift; sourceTree = "<group>"; };
+		D1D5A3AE259D14E900888466 /* WorkspaceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceState.swift; sourceTree = "<group>"; };
+		D1D5A3B1259D189600888466 /* RootEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootEnvironment.swift; sourceTree = "<group>"; };
+		D1D5A3B8259D190900888466 /* SystemEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemEnvironment.swift; sourceTree = "<group>"; };
 		D1F06443259CBD0C00B4367F /* Sourceful */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sourceful; path = ../Sourceful; sourceTree = "<group>"; };
 		D1F0644F259CBE1D00B4367F /* Ned.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ned.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -33,7 +44,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D13FD61A259B713900C328A8 /* SwiftTreeSitter in Frameworks */,
 				D1F0643E259CBB0B00B4367F /* SwiftLSPClient in Frameworks */,
 				D1F0644C259CBDFF00B4367F /* ComposableArchitecture in Frameworks */,
 				D1F06447259CBD4C00B4367F /* Sourceful in Frameworks */,
@@ -54,14 +64,18 @@
 				D13CBCBC259A6F3800808FD2 /* Products */,
 				D13CBCDC259A6F6400808FD2 /* Frameworks */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		D13CBCB3259A6F3600808FD2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				D13CBCB5259A6F3600808FD2 /* ContentView.swift */,
 				D13CBCB4259A6F3600808FD2 /* NedApp.swift */,
+				D18013F2259D377B004FF3A6 /* WelcomeView.swift */,
+				D13CBCB5259A6F3600808FD2 /* WorkspaceView.swift */,
 				D13CBCB6259A6F3800808FD2 /* Assets.xcassets */,
+				D18013EC259D2B22004FF3A6 /* Store */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -90,12 +104,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D18013EC259D2B22004FF3A6 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				D18013ED259D2B2F004FF3A6 /* SceneWithViewStore.swift */,
+				D1D5A3BB259D198E00888466 /* Environment */,
+				D1D5A3AD259D14DE00888466 /* State */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		D1D5A3AD259D14DE00888466 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				D1D5A3A5259D135200888466 /* RootState.swift */,
+				D1D5A3AE259D14E900888466 /* WorkspaceState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		D1D5A3BB259D198E00888466 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				D1D5A3B1259D189600888466 /* RootEnvironment.swift */,
+				D1D5A3B8259D190900888466 /* SystemEnvironment.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D13CBCC2259A6F3800808FD2 /* Ned (macOS) */ = {
+		D13CBCC2259A6F3800808FD2 /* Ned */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D13CBCD2259A6F3800808FD2 /* Build configuration list for PBXNativeTarget "Ned (macOS)" */;
+			buildConfigurationList = D13CBCD2259A6F3800808FD2 /* Build configuration list for PBXNativeTarget "Ned" */;
 			buildPhases = (
 				D13CBCBF259A6F3800808FD2 /* Sources */,
 				D13CBCC0259A6F3800808FD2 /* Frameworks */,
@@ -105,9 +147,8 @@
 			);
 			dependencies = (
 			);
-			name = "Ned (macOS)";
+			name = Ned;
 			packageProductDependencies = (
-				D13FD619259B713900C328A8 /* SwiftTreeSitter */,
 				D1F0643D259CBB0B00B4367F /* SwiftLSPClient */,
 				D1F06446259CBD4C00B4367F /* Sourceful */,
 				D1F0644B259CBDFF00B4367F /* ComposableArchitecture */,
@@ -140,7 +181,6 @@
 			);
 			mainGroup = D13CBCAE259A6F3600808FD2;
 			packageReferences = (
-				D13FD618259B713800C328A8 /* XCRemoteSwiftPackageReference "swift-tree-sitter" */,
 				D1F0643C259CBB0B00B4367F /* XCRemoteSwiftPackageReference "SwiftLSPClient" */,
 				D1F0644A259CBDFF00B4367F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
@@ -148,7 +188,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D13CBCC2259A6F3800808FD2 /* Ned (macOS) */,
+				D13CBCC2259A6F3800808FD2 /* Ned */,
 			);
 		};
 /* End PBXProject section */
@@ -169,8 +209,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D13CBCCA259A6F3800808FD2 /* ContentView.swift in Sources */,
+				D13CBCCA259A6F3800808FD2 /* WorkspaceView.swift in Sources */,
 				D13CBCC8259A6F3800808FD2 /* NedApp.swift in Sources */,
+				D1D5A3B9259D190900888466 /* SystemEnvironment.swift in Sources */,
+				D18013F3259D377B004FF3A6 /* WelcomeView.swift in Sources */,
+				D1D5A3A6259D135200888466 /* RootState.swift in Sources */,
+				D18013EE259D2B2F004FF3A6 /* SceneWithViewStore.swift in Sources */,
+				D1D5A3B2259D189600888466 /* RootEnvironment.swift in Sources */,
+				D1D5A3AF259D14E900888466 /* WorkspaceState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,7 +394,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D13CBCD2259A6F3800808FD2 /* Build configuration list for PBXNativeTarget "Ned (macOS)" */ = {
+		D13CBCD2259A6F3800808FD2 /* Build configuration list for PBXNativeTarget "Ned" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D13CBCD3259A6F3800808FD2 /* Debug */,
@@ -360,14 +406,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D13FD618259B713800C328A8 /* XCRemoteSwiftPackageReference "swift-tree-sitter" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/viktorstrate/swift-tree-sitter";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		D1F0643C259CBB0B00B4367F /* XCRemoteSwiftPackageReference "SwiftLSPClient" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ChimeHQ/SwiftLSPClient";
@@ -387,11 +425,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D13FD619259B713900C328A8 /* SwiftTreeSitter */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D13FD618259B713800C328A8 /* XCRemoteSwiftPackageReference "swift-tree-sitter" */;
-			productName = SwiftTreeSitter;
-		};
 		D1F0643D259CBB0B00B4367F /* SwiftLSPClient */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D1F0643C259CBB0B00B4367F /* XCRemoteSwiftPackageReference "SwiftLSPClient" */;
