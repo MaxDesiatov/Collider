@@ -7,31 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D13CBCC8259A6F3800808FD2 /* ColliderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13CBCB4259A6F3600808FD2 /* ColliderApp.swift */; };
-		D13CBCCA259A6F3800808FD2 /* WorkspaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13CBCB5259A6F3600808FD2 /* WorkspaceView.swift */; };
-		D13CBCCC259A6F3800808FD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13CBCB6259A6F3800808FD2 /* Assets.xcassets */; };
-		D18013EE259D2B2F004FF3A6 /* SceneWithViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18013ED259D2B2F004FF3A6 /* SceneWithViewStore.swift */; };
-		D18013F3259D377B004FF3A6 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18013F2259D377B004FF3A6 /* WelcomeView.swift */; };
-		D18843B1259DFF5A00CA4450 /* LifecycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18843B0259DFF5A00CA4450 /* LifecycleView.swift */; };
-		D1D5A3A6259D135200888466 /* RootState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5A3A5259D135200888466 /* RootState.swift */; };
-		D1D5A3AF259D14E900888466 /* WorkspaceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5A3AE259D14E900888466 /* WorkspaceState.swift */; };
-		D1D5A3B2259D189600888466 /* RootEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5A3B1259D189600888466 /* RootEnvironment.swift */; };
-		D1D5A3B9259D190900888466 /* SystemEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5A3B8259D190900888466 /* SystemEnvironment.swift */; };
-		D1F0643E259CBB0B00B4367F /* SwiftLSPClient in Frameworks */ = {isa = PBXBuildFile; productRef = D1F0643D259CBB0B00B4367F /* SwiftLSPClient */; };
-		D1F06447259CBD4C00B4367F /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = D1F06446259CBD4C00B4367F /* Sourceful */; };
-		D1F0644C259CBDFF00B4367F /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = D1F0644B259CBDFF00B4367F /* ComposableArchitecture */; };
+		D19373CB259E1676001B3DB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19373CA259E1676001B3DB6 /* AppDelegate.swift */; };
+		D19373CF259E1679001B3DB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D19373CE259E1679001B3DB6 /* Assets.xcassets */; };
+		D19373D2259E1679001B3DB6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D19373D1259E1679001B3DB6 /* Preview Assets.xcassets */; };
+		D19373D5259E1679001B3DB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D19373D3259E1679001B3DB6 /* Main.storyboard */; };
+		D19373DF259E16A7001B3DB6 /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = D19373DE259E16A7001B3DB6 /* Sourceful */; };
+		D19373E1259E16A7001B3DB6 /* SwiftLSPClient in Frameworks */ = {isa = PBXBuildFile; productRef = D19373E0259E16A7001B3DB6 /* SwiftLSPClient */; };
+		D19373E3259E16A7001B3DB6 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = D19373E2259E16A7001B3DB6 /* ComposableArchitecture */; };
+		D19373E5259E16AD001B3DB6 /* LifecycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18843B0259DFF5A00CA4450 /* LifecycleView.swift */; };
+		D19373E7259E16B0001B3DB6 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18013F2259D377B004FF3A6 /* WelcomeView.swift */; };
+		D19373E9259E16E1001B3DB6 /* WorkspaceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5A3AE259D14E900888466 /* WorkspaceState.swift */; };
+		D19373EA259E16E1001B3DB6 /* SceneWithViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18013ED259D2B2F004FF3A6 /* SceneWithViewStore.swift */; };
+		D19373EB259E16E1001B3DB6 /* RootEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5A3B1259D189600888466 /* RootEnvironment.swift */; };
+		D19373EC259E16E1001B3DB6 /* WorkspaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13CBCB5259A6F3600808FD2 /* WorkspaceView.swift */; };
+		D19373ED259E16E1001B3DB6 /* SystemEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5A3B8259D190900888466 /* SystemEnvironment.swift */; };
+		D19373EE259E16E1001B3DB6 /* RootState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5A3A5259D135200888466 /* RootState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D13CBCB4259A6F3600808FD2 /* ColliderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColliderApp.swift; sourceTree = "<group>"; };
 		D13CBCB5259A6F3600808FD2 /* WorkspaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceView.swift; sourceTree = "<group>"; };
-		D13CBCB6259A6F3800808FD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D13CBCC3259A6F3800808FD2 /* Collider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Collider.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D13CBCC5259A6F3800808FD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D13CBCC6259A6F3800808FD2 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		D18013ED259D2B2F004FF3A6 /* SceneWithViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneWithViewStore.swift; sourceTree = "<group>"; };
 		D18013F2259D377B004FF3A6 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		D18843B0259DFF5A00CA4450 /* LifecycleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifecycleView.swift; sourceTree = "<group>"; };
+		D19373C8259E1676001B3DB6 /* Collider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Collider.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D19373CA259E1676001B3DB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D19373CE259E1679001B3DB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D19373D1259E1679001B3DB6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D19373D4259E1679001B3DB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D19373D6259E1679001B3DB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D19373D7259E1679001B3DB6 /* Collider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Collider.entitlements; sourceTree = "<group>"; };
 		D1D5A3A5259D135200888466 /* RootState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootState.swift; sourceTree = "<group>"; };
 		D1D5A3AE259D14E900888466 /* WorkspaceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceState.swift; sourceTree = "<group>"; };
 		D1D5A3B1259D189600888466 /* RootEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootEnvironment.swift; sourceTree = "<group>"; };
@@ -40,13 +44,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D13CBCC0259A6F3800808FD2 /* Frameworks */ = {
+		D19373C5259E1676001B3DB6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1F0643E259CBB0B00B4367F /* SwiftLSPClient in Frameworks */,
-				D1F0644C259CBDFF00B4367F /* ComposableArchitecture in Frameworks */,
-				D1F06447259CBD4C00B4367F /* Sourceful in Frameworks */,
+				D19373DF259E16A7001B3DB6 /* Sourceful in Frameworks */,
+				D19373E1259E16A7001B3DB6 /* SwiftLSPClient in Frameworks */,
+				D19373E3259E16A7001B3DB6 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,7 +62,7 @@
 			children = (
 				D1F06443259CBD0C00B4367F /* Sourceful */,
 				D13CBCB3259A6F3600808FD2 /* Shared */,
-				D13CBCC4259A6F3800808FD2 /* macOS */,
+				D19373C9259E1676001B3DB6 /* Collider */,
 				D13CBCBC259A6F3800808FD2 /* Products */,
 				D13CBCDC259A6F6400808FD2 /* Frameworks */,
 			);
@@ -70,9 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				D18843B0259DFF5A00CA4450 /* LifecycleView.swift */,
-				D13CBCB4259A6F3600808FD2 /* ColliderApp.swift */,
 				D18013F2259D377B004FF3A6 /* WelcomeView.swift */,
-				D13CBCB6259A6F3800808FD2 /* Assets.xcassets */,
 				D18013EC259D2B22004FF3A6 /* Store */,
 				D157876F259DFB96002D9852 /* Workspace */,
 			);
@@ -82,18 +84,9 @@
 		D13CBCBC259A6F3800808FD2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D13CBCC3259A6F3800808FD2 /* Collider.app */,
+				D19373C8259E1676001B3DB6 /* Collider.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		D13CBCC4259A6F3800808FD2 /* macOS */ = {
-			isa = PBXGroup;
-			children = (
-				D13CBCC5259A6F3800808FD2 /* Info.plist */,
-				D13CBCC6259A6F3800808FD2 /* macOS.entitlements */,
-			);
-			path = macOS;
 			sourceTree = "<group>";
 		};
 		D13CBCDC259A6F6400808FD2 /* Frameworks */ = {
@@ -122,6 +115,27 @@
 			path = Store;
 			sourceTree = "<group>";
 		};
+		D19373C9259E1676001B3DB6 /* Collider */ = {
+			isa = PBXGroup;
+			children = (
+				D19373CA259E1676001B3DB6 /* AppDelegate.swift */,
+				D19373CE259E1679001B3DB6 /* Assets.xcassets */,
+				D19373D3259E1679001B3DB6 /* Main.storyboard */,
+				D19373D6259E1679001B3DB6 /* Info.plist */,
+				D19373D7259E1679001B3DB6 /* Collider.entitlements */,
+				D19373D0259E1679001B3DB6 /* Preview Content */,
+			);
+			path = Collider;
+			sourceTree = "<group>";
+		};
+		D19373D0259E1679001B3DB6 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D19373D1259E1679001B3DB6 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		D1D5A3AD259D14DE00888466 /* State */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,13 +156,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D13CBCC2259A6F3800808FD2 /* Collider */ = {
+		D19373C7259E1676001B3DB6 /* Collider */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D13CBCD2259A6F3800808FD2 /* Build configuration list for PBXNativeTarget "Collider" */;
+			buildConfigurationList = D19373D8259E1679001B3DB6 /* Build configuration list for PBXNativeTarget "Collider" */;
 			buildPhases = (
-				D13CBCBF259A6F3800808FD2 /* Sources */,
-				D13CBCC0259A6F3800808FD2 /* Frameworks */,
-				D13CBCC1259A6F3800808FD2 /* Resources */,
+				D19373C4259E1676001B3DB6 /* Sources */,
+				D19373C5259E1676001B3DB6 /* Frameworks */,
+				D19373C6259E1676001B3DB6 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -156,12 +170,12 @@
 			);
 			name = Collider;
 			packageProductDependencies = (
-				D1F0643D259CBB0B00B4367F /* SwiftLSPClient */,
-				D1F06446259CBD4C00B4367F /* Sourceful */,
-				D1F0644B259CBDFF00B4367F /* ComposableArchitecture */,
+				D19373DE259E16A7001B3DB6 /* Sourceful */,
+				D19373E0259E16A7001B3DB6 /* SwiftLSPClient */,
+				D19373E2259E16A7001B3DB6 /* ComposableArchitecture */,
 			);
-			productName = "Ned (macOS)";
-			productReference = D13CBCC3259A6F3800808FD2 /* Collider.app */;
+			productName = Collider;
+			productReference = D19373C8259E1676001B3DB6 /* Collider.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -173,7 +187,7 @@
 				LastSwiftUpdateCheck = 1230;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
-					D13CBCC2259A6F3800808FD2 = {
+					D19373C7259E1676001B3DB6 = {
 						CreatedOnToolsVersion = 12.3;
 					};
 				};
@@ -195,40 +209,53 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D13CBCC2259A6F3800808FD2 /* Collider */,
+				D19373C7259E1676001B3DB6 /* Collider */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D13CBCC1259A6F3800808FD2 /* Resources */ = {
+		D19373C6259E1676001B3DB6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D13CBCCC259A6F3800808FD2 /* Assets.xcassets in Resources */,
+				D19373D5259E1679001B3DB6 /* Main.storyboard in Resources */,
+				D19373D2259E1679001B3DB6 /* Preview Assets.xcassets in Resources */,
+				D19373CF259E1679001B3DB6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D13CBCBF259A6F3800808FD2 /* Sources */ = {
+		D19373C4259E1676001B3DB6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D13CBCCA259A6F3800808FD2 /* WorkspaceView.swift in Sources */,
-				D13CBCC8259A6F3800808FD2 /* ColliderApp.swift in Sources */,
-				D1D5A3B9259D190900888466 /* SystemEnvironment.swift in Sources */,
-				D18843B1259DFF5A00CA4450 /* LifecycleView.swift in Sources */,
-				D18013F3259D377B004FF3A6 /* WelcomeView.swift in Sources */,
-				D1D5A3A6259D135200888466 /* RootState.swift in Sources */,
-				D18013EE259D2B2F004FF3A6 /* SceneWithViewStore.swift in Sources */,
-				D1D5A3B2259D189600888466 /* RootEnvironment.swift in Sources */,
-				D1D5A3AF259D14E900888466 /* WorkspaceState.swift in Sources */,
+				D19373EC259E16E1001B3DB6 /* WorkspaceView.swift in Sources */,
+				D19373E5259E16AD001B3DB6 /* LifecycleView.swift in Sources */,
+				D19373EB259E16E1001B3DB6 /* RootEnvironment.swift in Sources */,
+				D19373E9259E16E1001B3DB6 /* WorkspaceState.swift in Sources */,
+				D19373EE259E16E1001B3DB6 /* RootState.swift in Sources */,
+				D19373CB259E1676001B3DB6 /* AppDelegate.swift in Sources */,
+				D19373E7259E16B0001B3DB6 /* WelcomeView.swift in Sources */,
+				D19373EA259E16E1001B3DB6 /* SceneWithViewStore.swift in Sources */,
+				D19373ED259E16E1001B3DB6 /* SystemEnvironment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D19373D3259E1679001B3DB6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D19373D4259E1679001B3DB6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D13CBCCD259A6F3800808FD2 /* Debug */ = {
@@ -342,49 +369,51 @@
 			};
 			name = Release;
 		};
-		D13CBCD3259A6F3800808FD2 /* Debug */ = {
+		D19373D9259E1679001B3DB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Collider/Collider.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Collider/Preview Content\"";
 				DEVELOPMENT_TEAM = H4Z9Z4RD2G;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = macOS/Info.plist;
+				INFOPLIST_FILE = Collider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dsignal.Collider;
-				PRODUCT_NAME = Collider;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		D13CBCD4259A6F3800808FD2 /* Release */ = {
+		D19373DA259E1679001B3DB6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Collider/Collider.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Collider/Preview Content\"";
 				DEVELOPMENT_TEAM = H4Z9Z4RD2G;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = macOS/Info.plist;
+				INFOPLIST_FILE = Collider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dsignal.Collider;
-				PRODUCT_NAME = Collider;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -402,11 +431,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D13CBCD2259A6F3800808FD2 /* Build configuration list for PBXNativeTarget "Collider" */ = {
+		D19373D8259E1679001B3DB6 /* Build configuration list for PBXNativeTarget "Collider" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D13CBCD3259A6F3800808FD2 /* Debug */,
-				D13CBCD4259A6F3800808FD2 /* Release */,
+				D19373D9259E1679001B3DB6 /* Debug */,
+				D19373DA259E1679001B3DB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -433,16 +462,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D1F0643D259CBB0B00B4367F /* SwiftLSPClient */ = {
+		D19373DE259E16A7001B3DB6 /* Sourceful */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Sourceful;
+		};
+		D19373E0259E16A7001B3DB6 /* SwiftLSPClient */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D1F0643C259CBB0B00B4367F /* XCRemoteSwiftPackageReference "SwiftLSPClient" */;
 			productName = SwiftLSPClient;
 		};
-		D1F06446259CBD4C00B4367F /* Sourceful */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Sourceful;
-		};
-		D1F0644B259CBDFF00B4367F /* ComposableArchitecture */ = {
+		D19373E2259E16A7001B3DB6 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D1F0644A259CBDFF00B4367F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;

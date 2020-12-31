@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D13CBCC2259A6F3800808FD2"
                BuildableName = "Collider.app"
-               BlueprintName = "Collider"
+               BlueprintName = "ColliderOld"
                ReferencedContainer = "container:Collider.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,12 +44,21 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D13CBCC2259A6F3800808FD2"
+            BlueprintIdentifier = "D19373C7259E1676001B3DB6"
             BuildableName = "Collider.app"
             BlueprintName = "Collider"
             ReferencedContainer = "container:Collider.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "D13CBCC2259A6F3800808FD2"
+            BuildableName = "Collider.app"
+            BlueprintName = "ColliderOld"
+            ReferencedContainer = "container:Collider.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -63,7 +72,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D13CBCC2259A6F3800808FD2"
             BuildableName = "Collider.app"
-            BlueprintName = "Collider"
+            BlueprintName = "ColliderOld"
             ReferencedContainer = "container:Collider.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
