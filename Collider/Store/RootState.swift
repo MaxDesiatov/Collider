@@ -3,15 +3,20 @@
 //
 
 import ComposableArchitecture
+import System
 
 struct RootState: Equatable {
   var workspaces = [WorkspaceState]()
 }
 
 enum RootAction {
-  case open
-  case openResponse(Result<FileItem?, Never>)
+  case openEmptyWorkspace
+  case showOpenDialog
+  case openWorkspace(FilePath)
+  case openDialogResponse(Result<URL?, Never>)
+  case traversalResponse(Result<FileItem, Error>)
   case workspace(Int, WorkspaceAction)
+  case removeWorkspace(Int)
 }
 
 typealias RootStore = Store<RootState, RootAction>
@@ -32,17 +37,43 @@ let rootReducer = RootReducer.combine(
   ),
   .init { state, action, environment in
     switch action {
-    case .open:
+    case .openEmptyWorkspace:
+      state.workspaces.append(.init())
+      environment.addWorkspace(nil)
+      return .none
+
+    case .showOpenDialog:
       return environment.open()
         .receive(on: environment.mainQueue)
         .catchToEffect()
-        .map(RootAction.openResponse)
+        .map(RootAction.openDialogResponse)
 
-    case let .openResponse(.success(fileItem?)):
+    case let .openWorkspace(path):
+      return environment.traverse(URL(fileURLWithPath: path.description))
+        .receive(on: environment.mainQueue)
+        .catchToEffect()
+        .map(RootAction.traversalResponse)
+
+    case let .openDialogResponse(.success(url?)):
+      return environment.traverse(url)
+        .receive(on: environment.mainQueue)
+        .catchToEffect()
+        .map(RootAction.traversalResponse)
+
+    case let .traversalResponse(.success(fileItem)):
       state.workspaces.append(.init(root: fileItem))
+      environment.addWorkspace(fileItem.path)
       return .none
 
-    case .openResponse(.success(nil)):
+    case let .traversalResponse(.failure(error)):
+      environment.showAlert(error)
+      return .none
+
+    case .openDialogResponse(.success(nil)):
+      return .none
+
+    case let .removeWorkspace(index):
+      environment.removeWorkspace(index)
       return .none
     }
   }

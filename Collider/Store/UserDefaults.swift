@@ -14,16 +14,25 @@ extension UserDefaults {
     }
   }
 
-  var workspacePaths: [FilePath] {
+  var workspacePaths: [FilePath?] {
     get {
       array(forKey: Keys.workspacePaths.description)?
         .compactMap { $0 as? String }
-        .map(FilePath.init(stringLiteral:))
+        .map { $0.isEmpty ? nil : FilePath(stringLiteral: $0) }
         ?? []
     }
 
     set {
-      setValue(newValue.map(\.description), forKey: Keys.workspacePaths.description)
+      setValue(
+        newValue.map { (path: FilePath?) -> String in
+          if let path = path {
+            return path.description
+          } else {
+            return ""
+          }
+        },
+        forKey: Keys.workspacePaths.description
+      )
     }
   }
 }

@@ -1,15 +1,17 @@
 //
-//  RootEnvironment.swift
-//  Ned
-//
 //  Created by Max Desiatov on 30/12/2020.
 //
 
 import AppKit
 import ComposableArchitecture
+import System
 
 struct RootEnvironment {
-  var open: () -> Effect<FileItem?, Never>
+  var open: () -> Effect<URL?, Never>
+  var traverse: (URL) -> Effect<FileItem, Error>
+  var addWorkspace: (FilePath?) -> ()
+  var removeWorkspace: (Int) -> ()
+  var showAlert: (Error) -> ()
 
   var workspace: WorkspaceEnvironment
 
@@ -22,26 +24,36 @@ struct RootEnvironment {
         openPanel.begin { result in
           if result == .OK {
             if let url = openPanel.url {
-              let children = try? FileManager.default.contentsOfDirectory(atPath: url.path)
-                .filter { !($0.first == ".") }
-                .compactMap { (name: String) -> FileItem? in
-                  FileItem(
-                    name: name,
-                    path: .init(url.appendingPathComponent(name).path),
-                    children: nil
-                  )
-                }
-              promise(
-                .success(
-                  FileItem(name: url.lastPathComponent, path: .init(url.path), children: children)
-                )
-              )
+              promise( .success(url ) )
             }
           } else if result == .cancel {
             promise(.success(nil))
           }
         }
       }
+    },
+    traverse: { url in
+      .catching {
+          let children = try FileManager.default.contentsOfDirectory(atPath: url.path)
+            .filter { !($0.first == ".") }
+            .compactMap { (name: String) -> FileItem? in
+              FileItem(
+                name: name,
+                path: .init(url.appendingPathComponent(name).path),
+                children: nil
+              )
+            }
+
+
+          return FileItem(name: url.lastPathComponent, path: .init(url.path), children: children)
+      }
+    },
+    addWorkspace: { UserDefaults.standard.workspacePaths.append($0) },
+    removeWorkspace: { UserDefaults.standard.workspacePaths.remove(at: $0) },
+    showAlert: {
+      let alert = NSAlert()
+      alert.messageText = $0.localizedDescription
+      alert.runModal()
     },
     workspace: .live
   ))

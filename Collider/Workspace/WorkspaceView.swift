@@ -17,18 +17,22 @@ struct WorkspaceView: View {
   @State var text = ""
   var body: some View {
     WithViewStore(store) { viewStore in
-      NavigationView {
-        ScrollView {
-          OutlineGroup(viewStore.root, children: \.children) { item in
-            HStack {
-              Text(item.description)
-              Spacer()
+      if let root = viewStore.root {
+        NavigationView {
+          ScrollView {
+            OutlineGroup(root, children: \.children) { item in
+              HStack {
+                Text(item.description)
+                Spacer()
+              }
+              .padding(2)
             }
-            .padding(2)
+            .padding()
           }
-          .padding()
+          SourceCodeTextEditor(text: $text)
         }
-        SourceCodeTextEditor(text: $text)
+      } else {
+        WelcomeView()
       }
     }
   }

@@ -22,7 +22,7 @@ struct FileItem: Hashable, Identifiable, CustomStringConvertible {
 }
 
 struct WorkspaceState: Equatable {
-  var root: FileItem
+  var root: FileItem?
 }
 
 enum WorkspaceAction {
