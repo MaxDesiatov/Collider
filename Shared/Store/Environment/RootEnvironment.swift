@@ -22,12 +22,12 @@ let rootEnvironment = RootEnvironment(
         if result == .OK {
           if let url = openPanel.url {
             let children = try? FileManager.default.contentsOfDirectory(atPath:url.path)
-              .compactMap { name -> FileItem? in
-                guard let name = name as? String else { return nil }
-                return FileItem(
+              .filter { !($0.first == ".") }
+              .compactMap { (name: String) -> FileItem? in
+                FileItem(
                   name: name,
                   path: .init(url.appendingPathComponent(name).path),
-                  children: []
+                  children: nil
                 )
               }
             promise(

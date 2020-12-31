@@ -5,8 +5,12 @@
 import ComposableArchitecture
 import Sourceful
 import SwiftUI
+import System
 
 struct WorkspaceView: View {
+  @SceneStorage("WorkspaceRootPath") var rootPath = ""
+  @Environment(\.scenePhase) private var scenePhase
+
   init(_ store: WorkspaceStore) {
     self.store = store
   }
@@ -18,10 +22,17 @@ struct WorkspaceView: View {
     WithViewStore(store) { viewStore in
       NavigationView {
         ScrollView {
-          OutlineGroup(viewStore.root, children: \.children) {
-            Text($0.description)
+          OutlineGroup(viewStore.root, children: \.children) { item in
+            HStack {
+              Text(item.description)
+              Spacer()
+            }
+            .padding(2)
           }
           .padding()
+        }
+        .onChange(of: scenePhase) { phase in
+            print(phase)
         }
         SourceCodeTextEditor(text: $text)
       }

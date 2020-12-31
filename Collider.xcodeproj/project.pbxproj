@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D13CBCC8259A6F3800808FD2 /* NedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13CBCB4259A6F3600808FD2 /* NedApp.swift */; };
+		D13CBCC8259A6F3800808FD2 /* ColliderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13CBCB4259A6F3600808FD2 /* ColliderApp.swift */; };
 		D13CBCCA259A6F3800808FD2 /* WorkspaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13CBCB5259A6F3600808FD2 /* WorkspaceView.swift */; };
 		D13CBCCC259A6F3800808FD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13CBCB6259A6F3800808FD2 /* Assets.xcassets */; };
 		D18013EE259D2B2F004FF3A6 /* SceneWithViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18013ED259D2B2F004FF3A6 /* SceneWithViewStore.swift */; };
 		D18013F3259D377B004FF3A6 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18013F2259D377B004FF3A6 /* WelcomeView.swift */; };
+		D18843B1259DFF5A00CA4450 /* LifecycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18843B0259DFF5A00CA4450 /* LifecycleView.swift */; };
 		D1D5A3A6259D135200888466 /* RootState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5A3A5259D135200888466 /* RootState.swift */; };
 		D1D5A3AF259D14E900888466 /* WorkspaceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5A3AE259D14E900888466 /* WorkspaceState.swift */; };
 		D1D5A3B2259D189600888466 /* RootEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5A3B1259D189600888466 /* RootEnvironment.swift */; };
@@ -22,21 +23,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D11E358D259D029000E7F4EA /* SwiftLSPClient.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftLSPClient.xcframework; path = ../SwiftLSPClient/SwiftLSPClient.xcframework; sourceTree = "<group>"; };
-		D13CBCB4259A6F3600808FD2 /* NedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NedApp.swift; sourceTree = "<group>"; };
+		D13CBCB4259A6F3600808FD2 /* ColliderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColliderApp.swift; sourceTree = "<group>"; };
 		D13CBCB5259A6F3600808FD2 /* WorkspaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceView.swift; sourceTree = "<group>"; };
 		D13CBCB6259A6F3800808FD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D13CBCC3259A6F3800808FD2 /* Ned.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ned.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D13CBCC3259A6F3800808FD2 /* Collider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Collider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D13CBCC5259A6F3800808FD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D13CBCC6259A6F3800808FD2 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		D18013ED259D2B2F004FF3A6 /* SceneWithViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneWithViewStore.swift; sourceTree = "<group>"; };
 		D18013F2259D377B004FF3A6 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		D18843B0259DFF5A00CA4450 /* LifecycleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifecycleView.swift; sourceTree = "<group>"; };
 		D1D5A3A5259D135200888466 /* RootState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootState.swift; sourceTree = "<group>"; };
 		D1D5A3AE259D14E900888466 /* WorkspaceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceState.swift; sourceTree = "<group>"; };
 		D1D5A3B1259D189600888466 /* RootEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootEnvironment.swift; sourceTree = "<group>"; };
 		D1D5A3B8259D190900888466 /* SystemEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemEnvironment.swift; sourceTree = "<group>"; };
 		D1F06443259CBD0C00B4367F /* Sourceful */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sourceful; path = ../Sourceful; sourceTree = "<group>"; };
-		D1F0644F259CBE1D00B4367F /* Ned.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ned.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +56,6 @@
 		D13CBCAE259A6F3600808FD2 = {
 			isa = PBXGroup;
 			children = (
-				D11E358D259D029000E7F4EA /* SwiftLSPClient.xcframework */,
-				D1F0644F259CBE1D00B4367F /* Ned.entitlements */,
 				D1F06443259CBD0C00B4367F /* Sourceful */,
 				D13CBCB3259A6F3600808FD2 /* Shared */,
 				D13CBCC4259A6F3800808FD2 /* macOS */,
@@ -71,11 +69,12 @@
 		D13CBCB3259A6F3600808FD2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				D13CBCB4259A6F3600808FD2 /* NedApp.swift */,
+				D18843B0259DFF5A00CA4450 /* LifecycleView.swift */,
+				D13CBCB4259A6F3600808FD2 /* ColliderApp.swift */,
 				D18013F2259D377B004FF3A6 /* WelcomeView.swift */,
-				D13CBCB5259A6F3600808FD2 /* WorkspaceView.swift */,
 				D13CBCB6259A6F3800808FD2 /* Assets.xcassets */,
 				D18013EC259D2B22004FF3A6 /* Store */,
+				D157876F259DFB96002D9852 /* Workspace */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -83,7 +82,7 @@
 		D13CBCBC259A6F3800808FD2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D13CBCC3259A6F3800808FD2 /* Ned.app */,
+				D13CBCC3259A6F3800808FD2 /* Collider.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,6 +103,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D157876F259DFB96002D9852 /* Workspace */ = {
+			isa = PBXGroup;
+			children = (
+				D1D5A3AE259D14E900888466 /* WorkspaceState.swift */,
+				D13CBCB5259A6F3600808FD2 /* WorkspaceView.swift */,
+			);
+			path = Workspace;
+			sourceTree = "<group>";
+		};
 		D18013EC259D2B22004FF3A6 /* Store */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				D1D5A3A5259D135200888466 /* RootState.swift */,
-				D1D5A3AE259D14E900888466 /* WorkspaceState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -135,9 +142,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D13CBCC2259A6F3800808FD2 /* Ned */ = {
+		D13CBCC2259A6F3800808FD2 /* Collider */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D13CBCD2259A6F3800808FD2 /* Build configuration list for PBXNativeTarget "Ned" */;
+			buildConfigurationList = D13CBCD2259A6F3800808FD2 /* Build configuration list for PBXNativeTarget "Collider" */;
 			buildPhases = (
 				D13CBCBF259A6F3800808FD2 /* Sources */,
 				D13CBCC0259A6F3800808FD2 /* Frameworks */,
@@ -147,14 +154,14 @@
 			);
 			dependencies = (
 			);
-			name = Ned;
+			name = Collider;
 			packageProductDependencies = (
 				D1F0643D259CBB0B00B4367F /* SwiftLSPClient */,
 				D1F06446259CBD4C00B4367F /* Sourceful */,
 				D1F0644B259CBDFF00B4367F /* ComposableArchitecture */,
 			);
 			productName = "Ned (macOS)";
-			productReference = D13CBCC3259A6F3800808FD2 /* Ned.app */;
+			productReference = D13CBCC3259A6F3800808FD2 /* Collider.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -171,7 +178,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D13CBCB2259A6F3600808FD2 /* Build configuration list for PBXProject "Ned" */;
+			buildConfigurationList = D13CBCB2259A6F3600808FD2 /* Build configuration list for PBXProject "Collider" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -188,7 +195,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D13CBCC2259A6F3800808FD2 /* Ned */,
+				D13CBCC2259A6F3800808FD2 /* Collider */,
 			);
 		};
 /* End PBXProject section */
@@ -210,8 +217,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D13CBCCA259A6F3800808FD2 /* WorkspaceView.swift in Sources */,
-				D13CBCC8259A6F3800808FD2 /* NedApp.swift in Sources */,
+				D13CBCC8259A6F3800808FD2 /* ColliderApp.swift in Sources */,
 				D1D5A3B9259D190900888466 /* SystemEnvironment.swift in Sources */,
+				D18843B1259DFF5A00CA4450 /* LifecycleView.swift in Sources */,
 				D18013F3259D377B004FF3A6 /* WelcomeView.swift in Sources */,
 				D1D5A3A6259D135200888466 /* RootState.swift in Sources */,
 				D18013EE259D2B2F004FF3A6 /* SceneWithViewStore.swift in Sources */,
@@ -351,8 +359,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dsignal.Ned;
-				PRODUCT_NAME = Ned;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dsignal.Collider;
+				PRODUCT_NAME = Collider;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -375,8 +383,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dsignal.Ned;
-				PRODUCT_NAME = Ned;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dsignal.Collider;
+				PRODUCT_NAME = Collider;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -385,7 +393,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D13CBCB2259A6F3600808FD2 /* Build configuration list for PBXProject "Ned" */ = {
+		D13CBCB2259A6F3600808FD2 /* Build configuration list for PBXProject "Collider" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D13CBCCD259A6F3800808FD2 /* Debug */,
@@ -394,7 +402,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D13CBCD2259A6F3800808FD2 /* Build configuration list for PBXNativeTarget "Ned" */ = {
+		D13CBCD2259A6F3800808FD2 /* Build configuration list for PBXNativeTarget "Collider" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D13CBCD3259A6F3800808FD2 /* Debug */,

@@ -1,7 +1,4 @@
 //
-//  NedApp.swift
-//  Shared
-//
 //  Created by Max Desiatov on 28/12/2020.
 //
 
@@ -9,7 +6,7 @@ import ComposableArchitecture
 import SwiftUI
 
 @main
-struct NedApp: App {
+struct ColliderApp: App {
   private let store = Store(
     initialState: RootState(),
     reducer: rootReducer,

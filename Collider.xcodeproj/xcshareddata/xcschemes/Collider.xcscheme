@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D13CBCC2259A6F3800808FD2"
-               BuildableName = "Ned.app"
-               BlueprintName = "Ned"
-               ReferencedContainer = "container:Ned.xcodeproj">
+               BuildableName = "Collider.app"
+               BlueprintName = "Collider"
+               ReferencedContainer = "container:Collider.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D13CBCC2259A6F3800808FD2"
-            BuildableName = "Ned.app"
-            BlueprintName = "Ned"
-            ReferencedContainer = "container:Ned.xcodeproj">
+            BuildableName = "Collider.app"
+            BlueprintName = "Collider"
+            ReferencedContainer = "container:Collider.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D13CBCC2259A6F3800808FD2"
-            BuildableName = "Ned.app"
-            BlueprintName = "Ned"
-            ReferencedContainer = "container:Ned.xcodeproj">
+            BuildableName = "Collider.app"
+            BlueprintName = "Collider"
+            ReferencedContainer = "container:Collider.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
