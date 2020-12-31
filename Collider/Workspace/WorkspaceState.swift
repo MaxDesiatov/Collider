@@ -30,6 +30,7 @@ enum WorkspaceAction {
 }
 
 typealias WorkspaceStore = Store<WorkspaceState, WorkspaceAction>
-typealias WorkspaceReducer = Reducer<WorkspaceState, WorkspaceAction, ()>
+typealias WorkspaceReducer =
+  Reducer<WorkspaceState, WorkspaceAction, SystemEnvironment<WorkspaceEnvironment>>
 
 let workspaceReducer = WorkspaceReducer  { _, _, _ in .none }

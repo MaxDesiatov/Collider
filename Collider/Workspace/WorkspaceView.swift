@@ -8,9 +8,6 @@ import SwiftUI
 import System
 
 struct WorkspaceView: View {
-  @SceneStorage("WorkspaceRootPath") var rootPath = ""
-  @Environment(\.scenePhase) private var scenePhase
-
   init(_ store: WorkspaceStore) {
     self.store = store
   }
@@ -30,9 +27,6 @@ struct WorkspaceView: View {
             .padding(2)
           }
           .padding()
-        }
-        .onChange(of: scenePhase) { phase in
-            print(phase)
         }
         SourceCodeTextEditor(text: $text)
       }

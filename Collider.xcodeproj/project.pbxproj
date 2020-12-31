@@ -17,16 +17,17 @@
 		D19373E5259E16AD001B3DB6 /* LifecycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18843B0259DFF5A00CA4450 /* LifecycleView.swift */; };
 		D19373E7259E16B0001B3DB6 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18013F2259D377B004FF3A6 /* WelcomeView.swift */; };
 		D19373E9259E16E1001B3DB6 /* WorkspaceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5A3AE259D14E900888466 /* WorkspaceState.swift */; };
-		D19373EA259E16E1001B3DB6 /* SceneWithViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18013ED259D2B2F004FF3A6 /* SceneWithViewStore.swift */; };
 		D19373EB259E16E1001B3DB6 /* RootEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5A3B1259D189600888466 /* RootEnvironment.swift */; };
 		D19373EC259E16E1001B3DB6 /* WorkspaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13CBCB5259A6F3600808FD2 /* WorkspaceView.swift */; };
 		D19373ED259E16E1001B3DB6 /* SystemEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5A3B8259D190900888466 /* SystemEnvironment.swift */; };
 		D19373EE259E16E1001B3DB6 /* RootState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5A3A5259D135200888466 /* RootState.swift */; };
+		D1F931C4259E79AE00667150 /* WorkspaceEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F931C3259E79AE00667150 /* WorkspaceEnvironment.swift */; };
+		D1F931C8259E7B5700667150 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F931C7259E7B5700667150 /* UserDefaults.swift */; };
+		D1F931CC259E7ED500667150 /* NSWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F931CB259E7ED400667150 /* NSWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D13CBCB5259A6F3600808FD2 /* WorkspaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceView.swift; sourceTree = "<group>"; };
-		D18013ED259D2B2F004FF3A6 /* SceneWithViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneWithViewStore.swift; sourceTree = "<group>"; };
 		D18013F2259D377B004FF3A6 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		D18843B0259DFF5A00CA4450 /* LifecycleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifecycleView.swift; sourceTree = "<group>"; };
 		D19373C8259E1676001B3DB6 /* Collider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Collider.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +42,9 @@
 		D1D5A3B1259D189600888466 /* RootEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootEnvironment.swift; sourceTree = "<group>"; };
 		D1D5A3B8259D190900888466 /* SystemEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemEnvironment.swift; sourceTree = "<group>"; };
 		D1F06443259CBD0C00B4367F /* Sourceful */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sourceful; path = ../Sourceful; sourceTree = "<group>"; };
+		D1F931C3259E79AE00667150 /* WorkspaceEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceEnvironment.swift; sourceTree = "<group>"; };
+		D1F931C7259E7B5700667150 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		D1F931CB259E7ED400667150 /* NSWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,10 +77,6 @@
 		D13CBCB3259A6F3600808FD2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				D18843B0259DFF5A00CA4450 /* LifecycleView.swift */,
-				D18013F2259D377B004FF3A6 /* WelcomeView.swift */,
-				D18013EC259D2B22004FF3A6 /* Store */,
-				D157876F259DFB96002D9852 /* Workspace */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -101,6 +101,7 @@
 			children = (
 				D1D5A3AE259D14E900888466 /* WorkspaceState.swift */,
 				D13CBCB5259A6F3600808FD2 /* WorkspaceView.swift */,
+				D1F931C3259E79AE00667150 /* WorkspaceEnvironment.swift */,
 			);
 			path = Workspace;
 			sourceTree = "<group>";
@@ -108,9 +109,10 @@
 		D18013EC259D2B22004FF3A6 /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				D18013ED259D2B2F004FF3A6 /* SceneWithViewStore.swift */,
-				D1D5A3BB259D198E00888466 /* Environment */,
-				D1D5A3AD259D14DE00888466 /* State */,
+				D1D5A3A5259D135200888466 /* RootState.swift */,
+				D1D5A3B1259D189600888466 /* RootEnvironment.swift */,
+				D1D5A3B8259D190900888466 /* SystemEnvironment.swift */,
+				D1F931C7259E7B5700667150 /* UserDefaults.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -118,6 +120,11 @@
 		D19373C9259E1676001B3DB6 /* Collider */ = {
 			isa = PBXGroup;
 			children = (
+				D1F931CA259E7ECB00667150 /* AppKit */,
+				D18843B0259DFF5A00CA4450 /* LifecycleView.swift */,
+				D18013F2259D377B004FF3A6 /* WelcomeView.swift */,
+				D18013EC259D2B22004FF3A6 /* Store */,
+				D157876F259DFB96002D9852 /* Workspace */,
 				D19373CA259E1676001B3DB6 /* AppDelegate.swift */,
 				D19373CE259E1679001B3DB6 /* Assets.xcassets */,
 				D19373D3259E1679001B3DB6 /* Main.storyboard */,
@@ -136,21 +143,12 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		D1D5A3AD259D14DE00888466 /* State */ = {
+		D1F931CA259E7ECB00667150 /* AppKit */ = {
 			isa = PBXGroup;
 			children = (
-				D1D5A3A5259D135200888466 /* RootState.swift */,
+				D1F931CB259E7ED400667150 /* NSWindow.swift */,
 			);
-			path = State;
-			sourceTree = "<group>";
-		};
-		D1D5A3BB259D198E00888466 /* Environment */ = {
-			isa = PBXGroup;
-			children = (
-				D1D5A3B1259D189600888466 /* RootEnvironment.swift */,
-				D1D5A3B8259D190900888466 /* SystemEnvironment.swift */,
-			);
-			path = Environment;
+			path = AppKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,12 +232,14 @@
 			files = (
 				D19373EC259E16E1001B3DB6 /* WorkspaceView.swift in Sources */,
 				D19373E5259E16AD001B3DB6 /* LifecycleView.swift in Sources */,
+				D1F931C4259E79AE00667150 /* WorkspaceEnvironment.swift in Sources */,
 				D19373EB259E16E1001B3DB6 /* RootEnvironment.swift in Sources */,
 				D19373E9259E16E1001B3DB6 /* WorkspaceState.swift in Sources */,
 				D19373EE259E16E1001B3DB6 /* RootState.swift in Sources */,
+				D1F931C8259E7B5700667150 /* UserDefaults.swift in Sources */,
 				D19373CB259E1676001B3DB6 /* AppDelegate.swift in Sources */,
+				D1F931CC259E7ED500667150 /* NSWindow.swift in Sources */,
 				D19373E7259E16B0001B3DB6 /* WelcomeView.swift in Sources */,
-				D19373EA259E16E1001B3DB6 /* SceneWithViewStore.swift in Sources */,
 				D19373ED259E16E1001B3DB6 /* SystemEnvironment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
