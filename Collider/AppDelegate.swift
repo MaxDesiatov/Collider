@@ -12,16 +12,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   private let windowManager = WindowManager()
 
   func applicationDidFinishLaunching(_ aNotification: Notification) {
-    let paths = UserDefaults.standard.workspacePaths
-
-    guard !paths.isEmpty else {
-      return windowManager.showWelcomeWindow()
-    }
-
-    windowManager.showWorkspaceWindows(paths)
+    windowManager.launch()
   }
 
   func applicationWillTerminate(_ aNotification: Notification) {
     // Insert code here to tear down your application
+  }
+
+  @IBAction func newWorkspace(_ sender: NSMenuItem) {
+    windowManager.newWorkspace()
   }
 }

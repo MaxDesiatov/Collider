@@ -24,7 +24,7 @@
 		D19373EE259E16E1001B3DB6 /* RootState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5A3A5259D135200888466 /* RootState.swift */; };
 		D1F931C4259E79AE00667150 /* WorkspaceEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F931C3259E79AE00667150 /* WorkspaceEnvironment.swift */; };
 		D1F931C8259E7B5700667150 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F931C7259E7B5700667150 /* UserDefaults.swift */; };
-		D1F931CC259E7ED500667150 /* NSWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F931CB259E7ED400667150 /* NSWindow.swift */; };
+		D1F931CC259E7ED500667150 /* ColliderWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F931CB259E7ED400667150 /* ColliderWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +46,7 @@
 		D1F06443259CBD0C00B4367F /* Sourceful */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sourceful; path = ../Sourceful; sourceTree = "<group>"; };
 		D1F931C3259E79AE00667150 /* WorkspaceEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceEnvironment.swift; sourceTree = "<group>"; };
 		D1F931C7259E7B5700667150 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
-		D1F931CB259E7ED400667150 /* NSWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSWindow.swift; sourceTree = "<group>"; };
+		D1F931CB259E7ED400667150 /* ColliderWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColliderWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +148,7 @@
 		D1F931CA259E7ECB00667150 /* AppKit */ = {
 			isa = PBXGroup;
 			children = (
-				D1F931CB259E7ED400667150 /* NSWindow.swift */,
+				D1F931CB259E7ED400667150 /* ColliderWindow.swift */,
 				D18F58AE259E8A5200038B6B /* WindowManager.swift */,
 			);
 			path = AppKit;
@@ -242,7 +242,7 @@
 				D19373EE259E16E1001B3DB6 /* RootState.swift in Sources */,
 				D1F931C8259E7B5700667150 /* UserDefaults.swift in Sources */,
 				D19373CB259E1676001B3DB6 /* AppDelegate.swift in Sources */,
-				D1F931CC259E7ED500667150 /* NSWindow.swift in Sources */,
+				D1F931CC259E7ED500667150 /* ColliderWindow.swift in Sources */,
 				D19373E7259E16B0001B3DB6 /* WelcomeView.swift in Sources */,
 				D19373ED259E16E1001B3DB6 /* SystemEnvironment.swift in Sources */,
 			);

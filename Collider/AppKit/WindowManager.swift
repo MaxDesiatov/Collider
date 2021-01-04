@@ -10,40 +10,69 @@ import ComposableArchitecture
 import System
 
 final class WindowManager: NSObject, NSWindowDelegate {
-  private var windows = [NSWindow]()
+  private var windows = [ColliderWindow]()
 
-  private let store = Store(
+  private lazy var store = Store(
     initialState: RootState(),
     reducer: rootReducer,
-    environment: RootEnvironment.live
+    environment: RootEnvironment.live(self)
   )
 
   private lazy var viewStore = ViewStore(store)
 
-  func showWelcomeWindow() {
-    viewStore.send(.openEmptyWorkspace)
-    windows.append(.init(view: WelcomeView(), autosave: "WelcomeView", delegate: self))
+  func newWorkspace() {
+    viewStore.send(.openWorkspace(nil, isPersistent: true, workspaceIndex: nil))
   }
 
-  func showWorkspaceWindows(_ paths: [FilePath?]) {
-    for (index, path) in paths.enumerated() {
-      guard let path = path else {
-        showWelcomeWindow()
-        continue
-      }
-      viewStore.send(.openWorkspace(path))
+  func showWelcomeWindow() {
+    windows.append(
+      .init(viewStore, index: windows.count, view: WelcomeView(), delegate: self)
+    )
+  }
+
+  func showWorkspaceWindow(for workspaceIndex: Int) {
+    if workspaceIndex < windows.count {
+      windows[workspaceIndex].close()
+      windows[workspaceIndex] = .init(
+        viewStore,
+        index: workspaceIndex,
+        view: WorkspaceView(store.workspace(workspaceIndex)),
+        delegate: self
+      )
+    } else {
       windows.append(
         .init(
-          view: WorkspaceView(store.workspace(index)),
-          autosave: path.description,
+          viewStore,
+          index: workspaceIndex,
+          view: WorkspaceView(store.workspace(workspaceIndex)),
           delegate: self
         )
       )
     }
   }
 
+  func launch() {
+    // FIXME: move this code to the reducer
+    let paths = UserDefaults.standard.workspacePaths
+
+    guard !paths.isEmpty else {
+      return viewStore.send(.openWorkspace(nil, isPersistent: true, workspaceIndex: nil))
+    }
+
+    for path in paths {
+      guard let path = path else {
+        viewStore.send(.openWorkspace(nil, isPersistent: false, workspaceIndex: nil))
+        continue
+      }
+      viewStore.send(.openWorkspace(path, isPersistent: false, workspaceIndex: nil))
+    }
+  }
+
   func windowShouldClose(_ sender: NSWindow) -> Bool {
-    guard let index = windows.firstIndex(of: sender) else { return true }
+    guard
+      let window = sender as? ColliderWindow,
+      let index = windows.firstIndex(of: window)
+    else { return true }
 
     viewStore.send(.removeWorkspace(index))
 
