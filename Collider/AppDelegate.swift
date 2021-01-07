@@ -22,4 +22,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   @IBAction func newWorkspace(_ sender: NSMenuItem) {
     windowManager.newWorkspace()
   }
+
+  @IBAction func showOpenDialog(_ sender: NSMenuItem) {
+    windowManager.showOpenDialog()
+  }
 }

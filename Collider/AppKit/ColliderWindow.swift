@@ -10,7 +10,7 @@ import SwiftUI
 
 final class ColliderWindow: NSWindow {
   private let viewStore: RootViewStore
-  private let workspaceID: WorkspaceState.ID
+  let workspaceID: WorkspaceState.ID
 
   init<V: View>(
     _ viewStore: RootViewStore,
@@ -34,7 +34,7 @@ final class ColliderWindow: NSWindow {
     self.makeKeyAndOrderFront(nil)
   }
 
-  @objc func openDocument(_ sender: Any?) {
+  func openDocument() {
     viewStore.send(.showOpenDialog(workspaceID: workspaceID))
   }
 }
