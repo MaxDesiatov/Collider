@@ -6,6 +6,12 @@ import ComposableArchitecture
 import System
 
 struct FileItem: Hashable, Identifiable, CustomStringConvertible {
+  init(name: String? = nil, path: FilePath, children: [FileItem]? = nil) {
+    self.name = name ?? URL(fileURLWithPath: path.description).lastPathComponent
+    self.path = path
+    self.children = children
+  }
+
   var id: Self { self }
   var name: String
   var path: FilePath
@@ -22,6 +28,7 @@ struct FileItem: Hashable, Identifiable, CustomStringConvertible {
 }
 
 struct WorkspaceState: Equatable {
+  typealias ID = UUID
   var root: FileItem?
 }
 

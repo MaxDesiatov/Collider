@@ -8,9 +8,9 @@ import System
 
 struct RootEnvironment {
   var showOpenDialog: () -> Effect<URL?, Never>
-  var traverse: (URL) -> Effect<FileItem, Error>
-  var openWorkspace: (FilePath?, _ isPersistent: Bool) -> ()
-  var removeWorkspace: (Int) -> ()
+  var traverse: (FilePath) -> Effect<FileItem, Error>
+  var openWorkspace: (FilePath?, _ isPersistent: Bool, WorkspaceState.ID) -> ()
+  var removeWorkspace: (WorkspaceState.ID) -> ()
   var showAlert: (Error) -> ()
 
   var workspace: WorkspaceEnvironment
@@ -33,9 +33,10 @@ struct RootEnvironment {
           }
         }
       },
-      traverse: { url in
-        .catching {
-          let children = try FileManager.default.contentsOfDirectory(atPath: url.path)
+      traverse: { path in
+        let url = URL(fileURLWithPath: path.description)
+        return .catching {
+          let children = try FileManager.default.contentsOfDirectory(atPath: path.description)
             .filter { !($0.first == ".") }
             .compactMap { (name: String) -> FileItem? in
               FileItem(
@@ -48,17 +49,18 @@ struct RootEnvironment {
           return FileItem(name: url.lastPathComponent, path: .init(url.path), children: children)
         }
       },
-      openWorkspace: { [weak windowManager] filePath, isPersistent in
+      openWorkspace: { [weak windowManager] filePath, isPersistent, workspaceID in
         if isPersistent {
-          UserDefaults.standard.workspacePaths.append(filePath)
+          UserDefaults.standard.workspacePaths[workspaceID] = filePath?.description ?? ""
         }
 
-        if let filePath = filePath {
+        if filePath != nil {
+          windowManager?.showWorkspaceWindow(workspaceID)
         } else {
-            windowManager?.showWelcomeWindow()
+          windowManager?.showWelcomeWindow(workspaceID)
         }
       },
-      removeWorkspace: { UserDefaults.standard.workspacePaths.remove(at: $0) },
+      removeWorkspace: { UserDefaults.standard.workspacePaths[$0] = nil },
       showAlert: {
         let alert = NSAlert()
         alert.messageText = $0.localizedDescription

@@ -14,23 +14,26 @@ extension UserDefaults {
     }
   }
 
-  var workspacePaths: [FilePath?] {
+  /// Empty path string denotes an empty workspace
+  var workspacePaths: [WorkspaceState.ID: String] {
     get {
-      array(forKey: Keys.workspacePaths.description)?
-        .compactMap { $0 as? String }
-        .map { $0.isEmpty ? nil : FilePath(stringLiteral: $0) }
-        ?? []
+      .init(
+        dictionary(forKey: Keys.workspacePaths.description)?
+          .compactMap({ (id, path) -> (WorkspaceState.ID, String)? in
+            guard
+              let path = path as? String,
+              let id = WorkspaceState.ID(uuidString: id)
+            else { return nil }
+
+            return (id, path)
+          }) ?? [],
+        uniquingKeysWith: { $1 }
+      )
     }
 
     set {
       setValue(
-        newValue.map { (path: FilePath?) -> String in
-          if let path = path {
-            return path.description
-          } else {
-            return ""
-          }
-        },
+        [String: String](newValue.map { ($0.description, $1) }, uniquingKeysWith: { $1 }),
         forKey: Keys.workspacePaths.description
       )
     }

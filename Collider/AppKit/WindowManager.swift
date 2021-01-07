@@ -6,11 +6,15 @@
 //
 
 import AppKit
+import Combine
 import ComposableArchitecture
 import System
 
 final class WindowManager: NSObject, NSWindowDelegate {
-  private var windows = [ColliderWindow]()
+  private var windows = [WorkspaceState.ID: ColliderWindow]()
+
+  /// Used for finding workspace ID for a given window when reacting to a UI event.
+  private var ids = [ColliderWindow: WorkspaceState.ID]()
 
   private lazy var store = Store(
     initialState: RootState(),
@@ -19,62 +23,48 @@ final class WindowManager: NSObject, NSWindowDelegate {
   )
 
   private lazy var viewStore = ViewStore(store)
+  private var subscriptions = [AnyCancellable]()
 
   func newWorkspace() {
-    viewStore.send(.openWorkspace(nil, isPersistent: true, workspaceIndex: nil))
+    viewStore.send(.openWorkspace(nil, isPersistent: true, workspaceID: nil))
   }
 
-  func showWelcomeWindow() {
-    windows.append(
-      .init(viewStore, index: windows.count, view: WelcomeView(), delegate: self)
-    )
+  func showWelcomeWindow(_ workspaceID: WorkspaceState.ID) {
+    let window = ColliderWindow(viewStore, workspaceID, view: WelcomeView(), delegate: self)
+    windows[workspaceID] = window
+    ids[window] = workspaceID
   }
 
-  func showWorkspaceWindow(for workspaceIndex: Int) {
-    if workspaceIndex < windows.count {
-      windows[workspaceIndex].close()
-      windows[workspaceIndex] = .init(
-        viewStore,
-        index: workspaceIndex,
-        view: WorkspaceView(store.workspace(workspaceIndex)),
+  func showWorkspaceWindow(_ workspaceID: WorkspaceState.ID) {
+    let workspaceStore = store.workspace(workspaceID)
+    workspaceStore.ifLet { [weak self] in
+      guard let self = self else { return }
+
+      if let window = self.windows[workspaceID] {
+        window.close()
+      }
+      let window = ColliderWindow(
+        self.viewStore,
+        workspaceID,
+        view: WorkspaceView($0),
         delegate: self
       )
-    } else {
-      windows.append(
-        .init(
-          viewStore,
-          index: workspaceIndex,
-          view: WorkspaceView(store.workspace(workspaceIndex)),
-          delegate: self
-        )
-      )
-    }
+      self.windows[workspaceID] = window
+      self.ids[window] = workspaceID
+    }.store(in: &subscriptions)
   }
 
   func launch() {
-    // FIXME: move this code to the reducer
-    let paths = UserDefaults.standard.workspacePaths
-
-    guard !paths.isEmpty else {
-      return viewStore.send(.openWorkspace(nil, isPersistent: true, workspaceIndex: nil))
-    }
-
-    for path in paths {
-      guard let path = path else {
-        viewStore.send(.openWorkspace(nil, isPersistent: false, workspaceIndex: nil))
-        continue
-      }
-      viewStore.send(.openWorkspace(path, isPersistent: false, workspaceIndex: nil))
-    }
+    viewStore.send(.launch(UserDefaults.standard.workspacePaths))
   }
 
   func windowShouldClose(_ sender: NSWindow) -> Bool {
     guard
       let window = sender as? ColliderWindow,
-      let index = windows.firstIndex(of: window)
+      let id = ids[window]
     else { return true }
 
-    viewStore.send(.removeWorkspace(index))
+    viewStore.send(.removeWorkspace(id))
 
     return true
   }

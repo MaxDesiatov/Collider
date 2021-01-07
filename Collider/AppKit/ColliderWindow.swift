@@ -10,16 +10,16 @@ import SwiftUI
 
 final class ColliderWindow: NSWindow {
   private let viewStore: RootViewStore
-  private let index: Int
+  private let workspaceID: WorkspaceState.ID
 
   init<V: View>(
     _ viewStore: RootViewStore,
-    index: Int,
+    _ workspaceID: WorkspaceState.ID,
     view: V,
     delegate: NSWindowDelegate
   ) {
     self.viewStore = viewStore
-    self.index = index
+    self.workspaceID = workspaceID
     super.init(
       contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
       styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
@@ -29,12 +29,12 @@ final class ColliderWindow: NSWindow {
     self.delegate = delegate
     self.isReleasedWhenClosed = false
     self.center()
-    self.setFrameAutosaveName("ColliderWindow\(index)")
+    self.setFrameAutosaveName(workspaceID.description)
     self.contentView = NSHostingView(rootView: view)
     self.makeKeyAndOrderFront(nil)
   }
 
   @objc func openDocument(_ sender: Any?) {
-    viewStore.send(.showOpenDialog(workspaceIndex: index))
+    viewStore.send(.showOpenDialog(workspaceID: workspaceID))
   }
 }

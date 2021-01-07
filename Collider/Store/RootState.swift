@@ -6,16 +6,17 @@ import ComposableArchitecture
 import System
 
 struct RootState: Equatable {
-  var workspaces = [WorkspaceState]()
+  var workspaces = [WorkspaceState.ID: WorkspaceState]()
 }
 
 enum RootAction {
-  case showOpenDialog(workspaceIndex: Int?)
-  case openWorkspace(FilePath?, isPersistent: Bool, workspaceIndex: Int?)
-  case openDialogResponse(Result<URL?, Never>, workspaceIndex: Int?)
-  case traversalResponse(Result<FileItem, Error>, workspaceIndex: Int?)
-  case workspace(Int, WorkspaceAction)
-  case removeWorkspace(Int)
+  case launch([WorkspaceState.ID: String])
+  case showOpenDialog(workspaceID: WorkspaceState.ID?)
+  case openWorkspace(FileItem?, isPersistent: Bool, workspaceID: WorkspaceState.ID?)
+  case openDialogResponse(Result<URL?, Never>, workspaceID: WorkspaceState.ID?)
+  case traversalResponse(Result<FileItem, Error>, WorkspaceState.ID)
+  case workspace(WorkspaceState.ID, WorkspaceAction)
+  case removeWorkspace(WorkspaceState.ID)
 }
 
 extension Store {
@@ -26,8 +27,8 @@ typealias RootStore = Store<RootState, RootAction>
 typealias RootViewStore = RootStore.ViewStore
 
 extension RootStore {
-  func workspace(_ index: Int) -> WorkspaceStore {
-    scope(state: { $0.workspaces[index] }, action: { RootAction.workspace(index, $0) })
+  func workspace(_ id: WorkspaceState.ID) -> Store<WorkspaceState?, WorkspaceAction> {
+    scope(state: { $0.workspaces[id] }, action: { RootAction.workspace(id, $0) })
   }
 }
 
@@ -41,44 +42,60 @@ let rootReducer = RootReducer.combine(
   ),
   .init { state, action, environment in
     switch action {
-    case let .showOpenDialog(workspaceIndex):
+    case let .launch(paths):
+      guard !paths.isEmpty else {
+        return .init(value: .openWorkspace(nil, isPersistent: true, workspaceID: nil))
+      }
+
+      return .init(paths.map { (id, path) -> RootAction in
+        guard !path.isEmpty else {
+          return .openWorkspace(nil, isPersistent: false, workspaceID: id)
+        }
+        return .openWorkspace(FileItem(path: FilePath(path)), isPersistent: false, workspaceID: id)
+      }
+      .publisher)
+
+    case let .showOpenDialog(workspaceID):
       return environment.showOpenDialog()
         .receive(on: environment.mainQueue)
         .catchToEffect()
-        .map { RootAction.openDialogResponse($0, workspaceIndex: workspaceIndex) }
+        .map { RootAction.openDialogResponse($0, workspaceID: workspaceID) }
 
-    case let .openWorkspace(path, isPersistent, workspaceIndex):
-      environment.openWorkspace(path, isPersistent)
-
-      guard let path = path else {
-        state.workspaces.append(.init())
-        return .none
+    case let .openWorkspace(fileItem, isPersistent, workspaceID):
+      let workspaceID = workspaceID ?? .init()
+      state.workspaces[workspaceID] = .init(root: fileItem)
+      defer {
+        environment.openWorkspace(fileItem?.path, isPersistent, workspaceID)
       }
-      return environment.traverse(URL(fileURLWithPath: path.description))
+
+      guard let fileItem = fileItem else { return .none }
+
+      return environment.traverse(fileItem.path)
         .receive(on: environment.mainQueue)
         .catchToEffect()
-        .map { RootAction.traversalResponse($0, workspaceIndex: workspaceIndex) }
+        .map { RootAction.traversalResponse($0, workspaceID) }
 
-    case let .openDialogResponse(.success(url?), workspaceIndex):
-      return environment.traverse(url)
+    case let .openDialogResponse(.success(url?), workspaceID):
+      return environment.traverse(FilePath(url.path))
         .receive(on: environment.mainQueue)
         .catchToEffect()
-        .map { RootAction.traversalResponse($0, workspaceIndex: workspaceIndex) }
+        .map { RootAction.traversalResponse($0, workspaceID ?? .init()) }
 
-    case let .traversalResponse(.success(fileItem), workspaceIndex):
-      state.workspaces.append(.init(root: fileItem))
+    case let .traversalResponse(.success(fileItem), workspaceID):
+      state.workspaces[workspaceID] = .init(root: fileItem)
+      environment.openWorkspace(fileItem.path, true, workspaceID)
       return .none
 
-    case let .traversalResponse(.failure(error), workspaceIndex):
+    case let .traversalResponse(.failure(error), workspaceID):
       environment.showAlert(error)
       return .none
 
     case .openDialogResponse(.success(nil), _):
       return .none
 
-    case let .removeWorkspace(index):
-      state.workspaces.remove(at: index)
-      environment.removeWorkspace(index)
+    case let .removeWorkspace(id):
+      state.workspaces[id] = nil
+      environment.removeWorkspace(id)
       return .none
     }
   }
