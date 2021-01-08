@@ -23,11 +23,14 @@ struct WorkspaceView: View {
             children: \.children,
             selection: viewStore.binding(get: \.selectedItem, send: WorkspaceAction.select)
           ) { item in
-            HStack {
-              Text(item.description)
-              Spacer()
-            }
-            .padding(2)
+              HStack {
+                Text(item.description)
+                Spacer()
+              }
+              .padding(2)
+              .contextMenu {
+                  Button("Rename") { print("rename") }
+              }
           }
           .listStyle(SidebarListStyle())
           .frame(minWidth: 220)
