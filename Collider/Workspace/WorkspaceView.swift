@@ -14,22 +14,25 @@ struct WorkspaceView: View {
 
   private let store: WorkspaceStore
 
-  @State var text = ""
   var body: some View {
     WithViewStore(store) { viewStore in
       if let root = viewStore.root {
         NavigationView {
-          ScrollView {
-            OutlineGroup(root, children: \.children) { item in
-              HStack {
-                Text(item.description)
-                Spacer()
-              }
-              .padding(2)
+          List(
+            [root],
+            children: \.children,
+            selection: viewStore.binding(get: \.selectedItem, send: WorkspaceAction.select)
+          ) { item in
+            HStack {
+              Text(item.description)
+              Spacer()
             }
-            .padding()
+            .padding(2)
           }
-          SourceCodeTextEditor(text: $text)
+          .listStyle(SidebarListStyle())
+          .frame(minWidth: 220)
+
+          SourceCodeTextEditor(text: viewStore.binding(get: \.editedText, send: WorkspaceAction.edit))
         }
       } else {
         WelcomeView()

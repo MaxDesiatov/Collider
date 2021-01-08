@@ -6,6 +6,12 @@ import AppKit
 import ComposableArchitecture
 import System
 
+private extension URL {
+  var isDirectory: Bool {
+     return (try? resourceValues(forKeys: [.isDirectoryKey]))?.isDirectory == true
+  }
+}
+
 struct RootEnvironment {
   var showOpenDialog: () -> Effect<URL?, Never>
   var traverse: (FilePath) -> Effect<FileItem, Error>
@@ -39,10 +45,11 @@ struct RootEnvironment {
           let children = try FileManager.default.contentsOfDirectory(atPath: path.description)
             .filter { !($0.first == ".") }
             .compactMap { (name: String) -> FileItem? in
-              FileItem(
+              let itemURL = url.appendingPathComponent(name)
+              return FileItem(
                 name: name,
-                path: .init(url.appendingPathComponent(name).path),
-                children: nil
+                path: .init(itemURL.path),
+                children: itemURL.isDirectory ? [] : nil
               )
             }
 

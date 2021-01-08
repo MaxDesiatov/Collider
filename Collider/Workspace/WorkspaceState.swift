@@ -15,7 +15,7 @@ struct FileItem: Hashable, Identifiable, CustomStringConvertible {
   var id: Self { self }
   var name: String
   var path: FilePath
-  var children: [FileItem]? = nil
+  var children: [FileItem]?
 
   var description: String {
     switch children {
@@ -30,14 +30,31 @@ struct FileItem: Hashable, Identifiable, CustomStringConvertible {
 struct WorkspaceState: Equatable {
   typealias ID = UUID
   var root: FileItem?
+  var selectedItem: FileItem?
+
+  var editedText = ""
 }
 
 enum WorkspaceAction {
-
+  case select(FileItem?)
+  case edit(String)
 }
 
 typealias WorkspaceStore = Store<WorkspaceState, WorkspaceAction>
 typealias WorkspaceReducer =
   Reducer<WorkspaceState, WorkspaceAction, SystemEnvironment<WorkspaceEnvironment>>
 
-let workspaceReducer = WorkspaceReducer  { _, _, _ in .none }
+let workspaceReducer = WorkspaceReducer { state, action, _ in
+  switch action {
+  case let .select(item):
+    state.selectedItem = item
+    if let item = item, item.children == nil {
+      state.editedText = try! String(contentsOf: URL(fileURLWithPath: item.path.description))
+    }
+    return .none
+
+  case let .edit(text):
+//    state.editedText = text
+    return .none
+  }
+}

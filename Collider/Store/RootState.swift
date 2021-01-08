@@ -97,6 +97,10 @@ let rootReducer = RootReducer.combine(
       state.workspaces[id] = nil
       environment.removeWorkspace(id)
       return .none
+
+    case .workspace:
+      // handled by `workspaceReducer`
+      return .none
     }
   }
 )
