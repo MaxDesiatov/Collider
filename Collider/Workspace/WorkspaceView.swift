@@ -33,7 +33,7 @@ struct WorkspaceView: View {
               }
           }
           .listStyle(SidebarListStyle())
-          .frame(minWidth: 220)
+          .frame(minWidth: 250)
 
           SourceCodeTextEditor(text: viewStore.binding(get: \.editedText, send: WorkspaceAction.edit))
         }

@@ -12,6 +12,23 @@ private extension URL {
   }
 }
 
+private extension FilePath {
+  func retrieveChildren() throws -> [FileItem] {
+    let url = URL(fileURLWithPath: description)
+
+    return try FileManager.default.contentsOfDirectory(atPath: description)
+      .filter { !($0.first == ".") }
+      .compactMap { (name: String) -> FileItem? in
+        let itemURL = url.appendingPathComponent(name)
+        return try FileItem(
+          name: name,
+          path: .init(itemURL.path),
+          children: itemURL.isDirectory ? FilePath(itemURL.path).retrieveChildren() : nil
+        )
+      }
+  }
+}
+
 struct RootEnvironment {
   var showOpenDialog: () -> Effect<URL?, Never>
   var traverse: (FilePath) -> Effect<FileItem, Error>
@@ -42,18 +59,11 @@ struct RootEnvironment {
       traverse: { path in
         let url = URL(fileURLWithPath: path.description)
         return .catching {
-          let children = try FileManager.default.contentsOfDirectory(atPath: path.description)
-            .filter { !($0.first == ".") }
-            .compactMap { (name: String) -> FileItem? in
-              let itemURL = url.appendingPathComponent(name)
-              return FileItem(
-                name: name,
-                path: .init(itemURL.path),
-                children: itemURL.isDirectory ? [] : nil
-              )
-            }
-
-          return FileItem(name: url.lastPathComponent, path: .init(url.path), children: children)
+          try FileItem(
+            name: url.lastPathComponent,
+            path: .init(url.path),
+            children: path.retrieveChildren()
+          )
         }
       },
       openWorkspace: { [weak windowManager] filePath, isPersistent, workspaceID in
