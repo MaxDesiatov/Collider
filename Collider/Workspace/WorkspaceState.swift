@@ -3,27 +3,15 @@
 //
 
 import ComposableArchitecture
-import System
 
-struct FileItem: Hashable, Identifiable, CustomStringConvertible {
-  init(name: String? = nil, path: FilePath, children: [FileItem]? = nil) {
-    self.name = name ?? URL(fileURLWithPath: path.description).lastPathComponent
-    self.path = path
-    self.children = children
-  }
+enum EditorSlot: Equatable {
+  case editor(EditorState)
+  case horizontal([EditorSlot])
+  case vertical([EditorSlot])
 
-  var id: Self { self }
-  var name: String
-  var path: FilePath
-  var children: [FileItem]?
-
-  var description: String {
-    switch children {
-    case nil:
-      return "📄 \(name)"
-    case let .some(children):
-      return children.isEmpty ? "📂 \(name)" : "📁 \(name)"
-    }
+  init(_ fileItem: FileItem?) {
+    // FIXME: check if `fileItem` is a directory
+    self = .editor(.init(tabs: .init([.init(fileItem)])))
   }
 }
 
@@ -32,12 +20,14 @@ struct WorkspaceState: Equatable {
   var root: FileItem?
   var selectedItem: FileItem?
 
+  // FIXME: Use `TextStorage` instead
   var editedText = ""
+
+  var slots: EditorSlot
 }
 
 enum WorkspaceAction {
   case select(FileItem?)
-  case edit(String)
 }
 
 typealias WorkspaceStore = Store<WorkspaceState, WorkspaceAction>
@@ -51,10 +41,6 @@ let workspaceReducer = WorkspaceReducer { state, action, _ in
     if let item = item, item.children == nil {
       state.editedText = try! String(contentsOf: URL(fileURLWithPath: item.path.description))
     }
-    return .none
-
-  case let .edit(text):
-//    state.editedText = text
     return .none
   }
 }

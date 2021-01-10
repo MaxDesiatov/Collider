@@ -21,9 +21,6 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  SOFTWARE.
  */
-//
-//  Created by Max Desiatov on 30/12/2020.
-//
 
 import ComposableArchitecture
 import Foundation

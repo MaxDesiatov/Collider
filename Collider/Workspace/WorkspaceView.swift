@@ -3,7 +3,6 @@
 //
 
 import ComposableArchitecture
-import Sourceful
 import SwiftUI
 import System
 
@@ -18,24 +17,24 @@ struct WorkspaceView: View {
     WithViewStore(store) { viewStore in
       if let root = viewStore.root {
         NavigationView {
-          List(
-            [root],
-            children: \.children,
-            selection: viewStore.binding(get: \.selectedItem, send: WorkspaceAction.select)
-          ) { item in
-              HStack {
-                Text(item.description)
-                Spacer()
-              }
-              .padding(2)
-              .contextMenu {
-                  Button("Rename") { print("rename") }
-              }
-          }
-          .listStyle(SidebarListStyle())
+    List(
+      [root],
+      children: \.children,
+      selection: viewStore.binding(get: \.selectedItem, send: WorkspaceAction.select)
+    ) { item in
+      HStack {
+        Text(item.description)
+        Spacer()
+      }
+      .padding(2)
+      .contextMenu {
+        Button("Rename") { print("rename") }
+      }
+    }
+    .listStyle(SidebarListStyle())
           .frame(minWidth: 250)
 
-          SourceCodeTextEditor(text: viewStore.binding(get: \.editedText, send: WorkspaceAction.edit))
+          EditorView()
         }
       } else {
         WelcomeView()

@@ -63,7 +63,7 @@ let rootReducer = RootReducer.combine(
 
     case let .openWorkspace(fileItem, isPersistent, workspaceID):
       let workspaceID = workspaceID ?? .init()
-      state.workspaces[workspaceID] = .init(root: fileItem)
+      state.workspaces[workspaceID] = .init(root: fileItem, slots: .init(fileItem))
       defer {
         environment.openWorkspace(fileItem?.path, isPersistent, workspaceID)
       }
@@ -82,7 +82,7 @@ let rootReducer = RootReducer.combine(
         .map { RootAction.traversalResponse($0, workspaceID ?? .init()) }
 
     case let .traversalResponse(.success(fileItem), workspaceID):
-      state.workspaces[workspaceID] = .init(root: fileItem)
+      state.workspaces[workspaceID] = .init(root: fileItem, slots: .init(fileItem))
       environment.openWorkspace(fileItem.path, true, workspaceID)
       return .none
 
