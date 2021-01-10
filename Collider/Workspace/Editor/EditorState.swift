@@ -10,7 +10,16 @@ import SwiftLSPClient
 
 struct EditorState: Equatable {
   let tabs: IdentifiedArrayOf<EditorTabState>
-  var currentTab = 0
+  var currentTab: EditorTabState.ID
+}
+
+extension EditorState {
+  init(_ fileItem: FileItem?) {
+    // FIXME: check if `fileItem` is a directory
+    let tab = EditorTabState(fileItem)
+    tabs = .init([tab])
+    currentTab = tab.id
+  }
 }
 
 enum EditorAction {

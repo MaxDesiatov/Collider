@@ -3,5 +3,7 @@
 //
 
 struct WorkspaceEnvironment {
-  static let live = Self()
+  let navigationTab: NavigationTabEnvironment
+
+  static let live = Self(navigationTab: .init(files: .init()))
 }

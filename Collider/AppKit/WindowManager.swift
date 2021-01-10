@@ -34,12 +34,6 @@ final class WindowManager: NSObject, NSWindowDelegate {
     viewStore.send(.showOpenDialog(workspaceID: keyWindow?.workspaceID))
   }
 
-  func showWelcomeWindow(_ workspaceID: WorkspaceState.ID) {
-    let window = ColliderWindow(viewStore, workspaceID, view: WelcomeView(), delegate: self)
-    windows[workspaceID] = window
-    ids[window] = workspaceID
-  }
-
   func showWorkspaceWindow(_ workspaceID: WorkspaceState.ID) {
     let workspaceStore = store.workspace(workspaceID)
     workspaceStore.ifLet { [weak self] in

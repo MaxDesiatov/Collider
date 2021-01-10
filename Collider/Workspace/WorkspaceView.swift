@@ -14,30 +14,11 @@ struct WorkspaceView: View {
   private let store: WorkspaceStore
 
   var body: some View {
-    WithViewStore(store) { viewStore in
-      if let root = viewStore.root {
-        NavigationView {
-    List(
-      [root],
-      children: \.children,
-      selection: viewStore.binding(get: \.selectedItem, send: WorkspaceAction.select)
-    ) { item in
-      HStack {
-        Text(item.description)
-        Spacer()
-      }
-      .padding(2)
-      .contextMenu {
-        Button("Rename") { print("rename") }
-      }
-    }
-    .listStyle(SidebarListStyle())
-          .frame(minWidth: 250)
+    WithViewStore(store) { _ in
+      NavigationView {
+        NavigationTabView(store: store.navigationTab)
 
-          EditorView()
-        }
-      } else {
-        WelcomeView()
+        EditorView()
       }
     }
   }

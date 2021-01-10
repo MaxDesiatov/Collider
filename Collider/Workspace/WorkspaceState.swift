@@ -10,37 +10,36 @@ enum EditorSlot: Equatable {
   case vertical([EditorSlot])
 
   init(_ fileItem: FileItem?) {
-    // FIXME: check if `fileItem` is a directory
-    self = .editor(.init(tabs: .init([.init(fileItem)])))
+    self = .editor(.init(fileItem))
   }
 }
 
 struct WorkspaceState: Equatable {
   typealias ID = UUID
-  var root: FileItem?
-  var selectedItem: FileItem?
 
-  // FIXME: Use `TextStorage` instead
-  var editedText = ""
+  var navigationTab: NavigationTabState
+  var editors: EditorSlot
 
-  var slots: EditorSlot
+  init(root: FileItem?) {
+    navigationTab = .init(root: root)
+    editors = .init(root)
+  }
 }
 
 enum WorkspaceAction {
+  case navigationTab(NavigationTabAction)
   case select(FileItem?)
 }
 
 typealias WorkspaceStore = Store<WorkspaceState, WorkspaceAction>
+
+extension WorkspaceStore {
+  var navigationTab: NavigationTabStore {
+    scope(state: \.navigationTab, action: WorkspaceAction.navigationTab)
+  }
+}
+
 typealias WorkspaceReducer =
   Reducer<WorkspaceState, WorkspaceAction, SystemEnvironment<WorkspaceEnvironment>>
 
-let workspaceReducer = WorkspaceReducer { state, action, _ in
-  switch action {
-  case let .select(item):
-    state.selectedItem = item
-    if let item = item, item.children == nil {
-      state.editedText = try! String(contentsOf: URL(fileURLWithPath: item.path.description))
-    }
-    return .none
-  }
-}
+let workspaceReducer = WorkspaceReducer.combine()

@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		D1386ED025AB1C57008BFEFA /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1386ECF25AB1C57008BFEFA /* EditorView.swift */; };
 		D1386ED525AB1E7F008BFEFA /* MacEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1386ED425AB1E7F008BFEFA /* MacEditor.swift */; };
+		D17830E425AB56DA0092B013 /* NavigationTabState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17830E325AB56DA0092B013 /* NavigationTabState.swift */; };
+		D17830E925AB58B30092B013 /* FilesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17830E825AB58B30092B013 /* FilesState.swift */; };
+		D17830ED25AB5C740092B013 /* NavigationTabEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17830EC25AB5C740092B013 /* NavigationTabEnvironment.swift */; };
+		D17830F025AB5D060092B013 /* FilesEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17830EF25AB5D060092B013 /* FilesEnvironment.swift */; };
+		D17830F525AB60700092B013 /* FilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17830F425AB60700092B013 /* FilesView.swift */; };
+		D17830FA25AB629D0092B013 /* NavigationTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17830F925AB629D0092B013 /* NavigationTabView.swift */; };
 		D18F58AF259E8A5200038B6B /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18F58AE259E8A5200038B6B /* WindowManager.swift */; };
 		D1908A0D25AB35CB00C0A08F /* EditorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1908A0C25AB35CB00C0A08F /* EditorState.swift */; };
 		D1908A1025AB394500C0A08F /* EditorEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1908A0F25AB394500C0A08F /* EditorEnvironment.swift */; };
@@ -21,7 +27,6 @@
 		D19373E1259E16A7001B3DB6 /* SwiftLSPClient in Frameworks */ = {isa = PBXBuildFile; productRef = D19373E0259E16A7001B3DB6 /* SwiftLSPClient */; };
 		D19373E3259E16A7001B3DB6 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = D19373E2259E16A7001B3DB6 /* ComposableArchitecture */; };
 		D19373E5259E16AD001B3DB6 /* LifecycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18843B0259DFF5A00CA4450 /* LifecycleView.swift */; };
-		D19373E7259E16B0001B3DB6 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18013F2259D377B004FF3A6 /* WelcomeView.swift */; };
 		D19373E9259E16E1001B3DB6 /* WorkspaceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5A3AE259D14E900888466 /* WorkspaceState.swift */; };
 		D19373EB259E16E1001B3DB6 /* RootEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5A3B1259D189600888466 /* RootEnvironment.swift */; };
 		D19373EC259E16E1001B3DB6 /* WorkspaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13CBCB5259A6F3600808FD2 /* WorkspaceView.swift */; };
@@ -36,7 +41,12 @@
 		D1386ECF25AB1C57008BFEFA /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
 		D1386ED425AB1E7F008BFEFA /* MacEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacEditor.swift; sourceTree = "<group>"; };
 		D13CBCB5259A6F3600808FD2 /* WorkspaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceView.swift; sourceTree = "<group>"; };
-		D18013F2259D377B004FF3A6 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		D17830E325AB56DA0092B013 /* NavigationTabState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTabState.swift; sourceTree = "<group>"; };
+		D17830E825AB58B30092B013 /* FilesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesState.swift; sourceTree = "<group>"; };
+		D17830EC25AB5C740092B013 /* NavigationTabEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTabEnvironment.swift; sourceTree = "<group>"; };
+		D17830EF25AB5D060092B013 /* FilesEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesEnvironment.swift; sourceTree = "<group>"; };
+		D17830F425AB60700092B013 /* FilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesView.swift; sourceTree = "<group>"; };
+		D17830F925AB629D0092B013 /* NavigationTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTabView.swift; sourceTree = "<group>"; };
 		D18843B0259DFF5A00CA4450 /* LifecycleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifecycleView.swift; sourceTree = "<group>"; };
 		D18F58AE259E8A5200038B6B /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
 		D1908A0C25AB35CB00C0A08F /* EditorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorState.swift; sourceTree = "<group>"; };
@@ -75,7 +85,7 @@
 		D1386ED225AB1C61008BFEFA /* Editor */ = {
 			isa = PBXGroup;
 			children = (
-				D1908A1225AB3DEA00C0A08F /* Tab */,
+				D1908A1225AB3DEA00C0A08F /* EditorTab */,
 				D1386ECF25AB1C57008BFEFA /* EditorView.swift */,
 				D1386ED425AB1E7F008BFEFA /* MacEditor.swift */,
 				D1908A0C25AB35CB00C0A08F /* EditorState.swift */,
@@ -121,13 +131,24 @@
 		D157876F259DFB96002D9852 /* Workspace */ = {
 			isa = PBXGroup;
 			children = (
-				D1908A1725AB3FEE00C0A08F /* FileTree */,
+				D17830E225AB56B30092B013 /* NavigationTab */,
 				D1D5A3AE259D14E900888466 /* WorkspaceState.swift */,
 				D13CBCB5259A6F3600808FD2 /* WorkspaceView.swift */,
 				D1F931C3259E79AE00667150 /* WorkspaceEnvironment.swift */,
 				D1386ED225AB1C61008BFEFA /* Editor */,
 			);
 			path = Workspace;
+			sourceTree = "<group>";
+		};
+		D17830E225AB56B30092B013 /* NavigationTab */ = {
+			isa = PBXGroup;
+			children = (
+				D1908A1725AB3FEE00C0A08F /* Files */,
+				D17830E325AB56DA0092B013 /* NavigationTabState.swift */,
+				D17830EC25AB5C740092B013 /* NavigationTabEnvironment.swift */,
+				D17830F925AB629D0092B013 /* NavigationTabView.swift */,
+			);
+			path = NavigationTab;
 			sourceTree = "<group>";
 		};
 		D18013EC259D2B22004FF3A6 /* Store */ = {
@@ -141,20 +162,23 @@
 			path = Store;
 			sourceTree = "<group>";
 		};
-		D1908A1225AB3DEA00C0A08F /* Tab */ = {
+		D1908A1225AB3DEA00C0A08F /* EditorTab */ = {
 			isa = PBXGroup;
 			children = (
 				D1908A1325AB3E0E00C0A08F /* EditorTabState.swift */,
 			);
-			path = Tab;
+			path = EditorTab;
 			sourceTree = "<group>";
 		};
-		D1908A1725AB3FEE00C0A08F /* FileTree */ = {
+		D1908A1725AB3FEE00C0A08F /* Files */ = {
 			isa = PBXGroup;
 			children = (
 				D1908A1825AB3FF900C0A08F /* FileItem.swift */,
+				D17830E825AB58B30092B013 /* FilesState.swift */,
+				D17830EF25AB5D060092B013 /* FilesEnvironment.swift */,
+				D17830F425AB60700092B013 /* FilesView.swift */,
 			);
-			path = FileTree;
+			path = Files;
 			sourceTree = "<group>";
 		};
 		D19373C9259E1676001B3DB6 /* Collider */ = {
@@ -162,7 +186,6 @@
 			children = (
 				D1F931CA259E7ECB00667150 /* AppKit */,
 				D18843B0259DFF5A00CA4450 /* LifecycleView.swift */,
-				D18013F2259D377B004FF3A6 /* WelcomeView.swift */,
 				D18013EC259D2B22004FF3A6 /* Store */,
 				D157876F259DFB96002D9852 /* Workspace */,
 				D19373CA259E1676001B3DB6 /* AppDelegate.swift */,
@@ -271,21 +294,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1908A1425AB3E0E00C0A08F /* EditorTabState.swift in Sources */,
+				D17830E425AB56DA0092B013 /* NavigationTabState.swift in Sources */,
 				D1908A0D25AB35CB00C0A08F /* EditorState.swift in Sources */,
 				D19373EC259E16E1001B3DB6 /* WorkspaceView.swift in Sources */,
 				D19373E5259E16AD001B3DB6 /* LifecycleView.swift in Sources */,
 				D1F931C4259E79AE00667150 /* WorkspaceEnvironment.swift in Sources */,
 				D19373EB259E16E1001B3DB6 /* RootEnvironment.swift in Sources */,
 				D19373E9259E16E1001B3DB6 /* WorkspaceState.swift in Sources */,
+				D17830F525AB60700092B013 /* FilesView.swift in Sources */,
 				D18F58AF259E8A5200038B6B /* WindowManager.swift in Sources */,
 				D19373EE259E16E1001B3DB6 /* RootState.swift in Sources */,
 				D1F931C8259E7B5700667150 /* UserDefaults.swift in Sources */,
+				D17830FA25AB629D0092B013 /* NavigationTabView.swift in Sources */,
+				D17830ED25AB5C740092B013 /* NavigationTabEnvironment.swift in Sources */,
 				D1908A1925AB3FF900C0A08F /* FileItem.swift in Sources */,
 				D1386ED025AB1C57008BFEFA /* EditorView.swift in Sources */,
 				D19373CB259E1676001B3DB6 /* AppDelegate.swift in Sources */,
 				D1386ED525AB1E7F008BFEFA /* MacEditor.swift in Sources */,
 				D1F931CC259E7ED500667150 /* ColliderWindow.swift in Sources */,
-				D19373E7259E16B0001B3DB6 /* WelcomeView.swift in Sources */,
+				D17830F025AB5D060092B013 /* FilesEnvironment.swift in Sources */,
+				D17830E925AB58B30092B013 /* FilesState.swift in Sources */,
 				D1908A1025AB394500C0A08F /* EditorEnvironment.swift in Sources */,
 				D19373ED259E16E1001B3DB6 /* SystemEnvironment.swift in Sources */,
 			);

@@ -8,7 +8,7 @@ import System
 
 private extension URL {
   var isDirectory: Bool {
-     return (try? resourceValues(forKeys: [.isDirectoryKey]))?.isDirectory == true
+    (try? resourceValues(forKeys: [.isDirectoryKey]))?.isDirectory == true
   }
 }
 
@@ -71,11 +71,7 @@ struct RootEnvironment {
           UserDefaults.standard.workspacePaths[workspaceID] = filePath?.description ?? ""
         }
 
-        if filePath != nil {
-          windowManager?.showWorkspaceWindow(workspaceID)
-        } else {
-          windowManager?.showWelcomeWindow(workspaceID)
-        }
+        windowManager?.showWorkspaceWindow(workspaceID)
       },
       removeWorkspace: { UserDefaults.standard.workspacePaths[$0] = nil },
       showAlert: {
